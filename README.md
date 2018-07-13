@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is to build a web client that brings a bunch of great news sources together in one application.
 
-Things you may want to cover:
+Currently planning to incorporate Hackernews first
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Technlogoy -
+Frontend: Vue
+Backend: Rails
+Database: Postgres
