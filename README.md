@@ -4,7 +4,7 @@ This project is to build a web client that brings a bunch of great news sources 
 
 Currently planning to incorporate Hackernews first
 
-- Technlogoy -
+- Technology -
 Frontend: Vue
 Backend: Rails
 Database: Postgres
