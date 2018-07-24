@@ -23,11 +23,12 @@
   <div class="vue-component">
 
     <h1>{{ message }}</h1>
-    <ul>
+    <ol>
       <li v-for="item in list">
         <a :href="item.url">{{item.title}}</a>
+        <a :href="'https://news.ycombinator.com/item?id='+ item.id">comments</a>
       </li>
-    </ul>
+    </ol>
 
   </div>
 </template>

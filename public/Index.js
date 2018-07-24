@@ -16,6 +16,7 @@ var HomePage = {
         axios.get("https://hacker-news.firebaseio.com/v0/item/" + id + ".json?print=pretty").then(function (response) {
           this.list.push(response.data);
         }.bind(this));
+        
       }.bind(this));
       console.log(this.list);
       
