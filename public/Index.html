@@ -24,7 +24,9 @@
 
     <h1>{{ message }}</h1>
     <ul>
-      <li v-for="item in list">{{item.title}}</li>
+      <li v-for="item in list">
+        <a :href="item.url">{{item.title}}</a>
+      </li>
     </ul>
 
   </div>

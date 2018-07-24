@@ -3,7 +3,7 @@ var HomePage = {
   template: "#home-page",
   data: function () {
     return {
-      message: "Welcome to Vue.js!",
+      message: "News-Hunt",
       list: [],
       top_list_ids: []
     };
