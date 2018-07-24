@@ -4,26 +4,39 @@ var HomePage = {
   data: function () {
     return {
       message: "Welcome to Vue.js!",
-      list: []
+      list: [],
+      top_list_ids: []
     };
   },
   created: function () {
     axios.get("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty").then(function(response){
-      top_list_ids = response.data;
-      this.list = response.data;
-      // top_list_ids.forEach(function(item){
-      //   const instace = axios.create({
-      //     baseURL: "https://hacker-news.firebaseio.com/v0/item/" + item,
-      //     headers: { 'Access-Control-Allow-Origin': 'true'}
-      //   });
-      //     instace.get.then(function(response){
-      //     this.list.push(response);
-      //   }.bind(this));
-      // }.bind(this));
+      this.top_list_ids = response.data;
+      // console.log(this.top_list_ids)
+      this.top_list_ids.forEach(function(id){
+        axios.get("https://hacker-news.firebaseio.com/v0/item/" + id + ".json?print=pretty").then(function (response) {
+          this.list.push(response.data);
+        }.bind(this));
+      }.bind(this));
+      console.log(this.list);
+      
     }.bind(this));
+    // this.list = [1,2,3]
+
+    // top_list_ids.forEach(function(id){
+    //   console.log("COLLEEN")
+    //   axios.get("https://hacker-news.firebaseio.com/v0/item/"+ id +".json?print=pretty").then(function(response){
+    //     console.log(id);
+    //     console.log(response.data);
+    //   })
+    // })
+    
   },
   methods: {},
-  computed: {}
+  computed: {
+    getStories: function (){
+      console.log(top_list_ids);
+    }
+  }
 };
 
 var router = new VueRouter({
