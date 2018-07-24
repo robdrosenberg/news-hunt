@@ -26,6 +26,7 @@
     <ol>
       <li v-for="item in list">
         <a :href="item.url">{{item.title}}</a>
+        <br>
         <a :href="'https://news.ycombinator.com/item?id='+ item.id">comments</a>
       </li>
     </ol>
