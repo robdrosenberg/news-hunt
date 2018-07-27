@@ -5,7 +5,8 @@ var HomePage = {
     return {
       message: "News-Hunt",
       list: [],
-      top_list_ids: []
+      top_list_ids: [],
+      products: []
     };
   },
   created: function () {
@@ -51,14 +52,11 @@ var HomePage = {
 
     axios.get('https://api.producthunt.com/v1/posts', config).then(function(response){
       console.log(response.data);
-    });
+      this.products = response.data;
+    }.bind(this));
   },
   methods: {},
-  computed: {
-    getStories: function (){
-      console.log(top_list_ids);
-    }
-  }
+  computed: {}
 };
 
 var router = new VueRouter({

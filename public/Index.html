@@ -25,7 +25,7 @@
     <h1>{{ message }}</h1>
     <ol>
       <li v-for="item in list">
-        <a :href="item.url">{{item.title}}</a>
+        <a :href="item.url">{{item.title}}</a> <span> Score: {{item.score}}</span> 
         <br>
         <a :href="'https://news.ycombinator.com/item?id='+ item.id">comments</a>
       </li>
