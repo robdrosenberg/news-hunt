@@ -30,7 +30,28 @@ var HomePage = {
     //     console.log(response.data);
     //   })
     // })
-    
+    // var settings = {
+    //   "async": true,
+    //   "crossDomain": true,
+    //   "url": "https://api.producthunt.com/v1/posts",
+    //   "method": "GET",
+    //   "headers": {
+    //     "Accept": "application/json",
+    //     "Content-Type": "application/json",
+    //     "Authorization": "Bearer 3e627f2710c24eadf5c4cbdda0bd0aeace3adbe0b706ed8f14a4e4eb60bab936"
+    //   }
+    // }
+
+    // $.ajax(settings).done(function (response) {
+    //   console.log(response);
+    // });
+    var config = {
+      headers: { 'Authorization': 'Bearer 3e627f2710c24eadf5c4cbdda0bd0aeace3adbe0b706ed8f14a4e4eb60bab936' }
+    };
+
+    axios.get('https://api.producthunt.com/v1/posts', config).then(function(response){
+      console.log(response.data);
+    });
   },
   methods: {},
   computed: {
