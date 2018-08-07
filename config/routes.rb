@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api do
+    get 'reddit' => 'posts#reddit'
+    get 'producthunt' => 'posts#producthunt'
+    get 'medium' => 'posts#medium'
+    get 'hackernews' => 'posts#hackernews'
+    get 'githubtrending' => 'posts#githubtrending'
+  end
 end

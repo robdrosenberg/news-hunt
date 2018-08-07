@@ -1,0 +1,2 @@
+class Reddit < ApplicationRecord
+end

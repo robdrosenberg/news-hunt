@@ -37,7 +37,9 @@ var HomePage = {
 };
 
 var router = new VueRouter({
-  routes: [{ path: "/", component: HomePage }],
+  routes: [
+    { path: "/", component: HomePage }
+  ],
   scrollBehavior: function (to, from, savedPosition) {
     return { x: 0, y: 0 };
   }
