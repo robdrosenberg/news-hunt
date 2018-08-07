@@ -12,7 +12,8 @@ class Api::PostsController < ApplicationController
   end
 
   def hackernews
-    
+    @hacker_news_posts = HackerNews.get_posts
+    render 'hacker_news.json.jbuilder'
   end
 
   def githubtrending
