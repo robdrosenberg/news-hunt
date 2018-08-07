@@ -1,0 +1,2 @@
+class HackerNews < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class GithubTrending < ApplicationRecord
+end
