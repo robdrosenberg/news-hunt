@@ -22,30 +22,7 @@ var HomePage = {
       console.log(this.list);
       
     }.bind(this));
-    // this.list = [1,2,3]
 
-    // top_list_ids.forEach(function(id){
-    //   console.log("COLLEEN")
-    //   axios.get("https://hacker-news.firebaseio.com/v0/item/"+ id +".json?print=pretty").then(function(response){
-    //     console.log(id);
-    //     console.log(response.data);
-    //   })
-    // })
-    // var settings = {
-    //   "async": true,
-    //   "crossDomain": true,
-    //   "url": "https://api.producthunt.com/v1/posts",
-    //   "method": "GET",
-    //   "headers": {
-    //     "Accept": "application/json",
-    //     "Content-Type": "application/json",
-    //     "Authorization": "Bearer 3e627f2710c24eadf5c4cbdda0bd0aeace3adbe0b706ed8f14a4e4eb60bab936"
-    //   }
-    // }
-
-    // $.ajax(settings).done(function (response) {
-    //   console.log(response);
-    // });
     var config = {
       headers: { 'Authorization': 'Bearer 3e627f2710c24eadf5c4cbdda0bd0aeace3adbe0b706ed8f14a4e4eb60bab936' }
     };
