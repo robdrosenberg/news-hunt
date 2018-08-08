@@ -1,6 +1,7 @@
 class Api::PostsController < ApplicationController
   def reddit
-
+    @reddit_posts = Reddit.get_posts
+    render 'reddit.json.jbuilder'
   end
 
   def producthunt
