@@ -1,6 +1,6 @@
 class ProductHunt < ApplicationRecord
   def self.get_posts
-    response = Unirest.get("https://api.producthunt.com/v1/posts", headers: {'Authorization': 'Bearer 3e627f2710c24eadf5c4cbdda0bd0aeace3adbe0b706ed8f14a4e4eb60bab936'})
+    response = Unirest.get("https://api.producthunt.com/v1/posts", headers: {'Authorization': "Bearer #{ENV["PRODUCTHUNT_TOKEN"]}"})
     posts = response.body['posts'][0..19]
     posts.map!{|post| normalize(post)}
   end
