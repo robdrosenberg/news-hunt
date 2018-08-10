@@ -5,7 +5,7 @@ class Api::PostsController < ApplicationController
   end
 
   def producthunt
-
+    
   end
 
   def medium
