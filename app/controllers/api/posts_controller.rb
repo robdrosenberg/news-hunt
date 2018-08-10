@@ -5,7 +5,8 @@ class Api::PostsController < ApplicationController
   end
 
   def producthunt
-
+    @producthunt_posts = ProductHunt.get_posts
+    render 'product_hunt.json.jbuilder'
   end
 
   def medium
