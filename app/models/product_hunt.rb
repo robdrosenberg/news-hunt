@@ -9,7 +9,8 @@ class ProductHunt < ApplicationRecord
     {
       id: post['id'],
       title: post['name'],
-      url: post['discussion_url'],
+      url: post['redirect_url'],
+      comments_url: post['discussion_url'],
       points: post['votes_count'],
       comments: post['comments_count'],
       author: post['user']['username']
