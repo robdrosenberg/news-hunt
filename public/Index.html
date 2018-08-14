@@ -31,16 +31,27 @@
 <template id="home-page">
   <div class="vue-component">
 
-    <h1>{{ message }}</h1>
-    <ol>
-      <li v-for="item in list">
-        <a :href="item.url">{{item.title}}</a> <span> Score: {{item.points}}</span> 
-        <br>
-        <p>By: {{item.author}}</p>
-        <p>{{item.comments}} <a :href = "item.comments_url">comments</a></p> 
-        <p>{{item.source}}</p>
-      </li>
-    </ol>
+    <div class="container">
+      <div class="col s12 m7" v-for="item in list">
+        <div class="card horizontal">
+  <!--         <div class="card-image">
+            <img src="https://lorempixel.com/100/190/nature/6">
+          </div> -->
+          <div class="card-stacked">
+            <div class="card-content">
+              <h5>{{ item.title }}</h5>
+            </div>
+            <div class="card-action">
+              <span>{{ item.source }}</span>
+              <span>{{ item.points }} pts</span>
+              <span>By: {{ item.author }}</span>
+              <span>{{item.comments}} <a :href = "item.comments_url">comments</a></span>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </template>
