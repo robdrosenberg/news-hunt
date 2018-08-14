@@ -4,32 +4,13 @@ var HomePage = {
   data: function () {
     return {
       message: "News-Hunt",
-      list: [],
-      top_list_ids: [],
-      products: []
+      list: []
     };
   },
   created: function () {
-    axios.get("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty").then(function(response){
-      this.top_list_ids = response.data;
-      // console.log(this.top_list_ids)
-      this.top_list_ids.forEach(function(id){
-        axios.get("https://hacker-news.firebaseio.com/v0/item/" + id + ".json?print=pretty").then(function (response) {
-          this.list.push(response.data);
-        }.bind(this));
-        
-      }.bind(this));
-      console.log(this.list);
-      
-    }.bind(this));
+    axios.get("http://localhost:3000/api/all").then(function(response){
+      this.list = response.data;
 
-    var config = {
-      headers: { 'Authorization': 'Bearer 3e627f2710c24eadf5c4cbdda0bd0aeace3adbe0b706ed8f14a4e4eb60bab936' }
-    };
-
-    axios.get('https://api.producthunt.com/v1/posts', config).then(function(response){
-      console.log(response.data);
-      this.products = response.data;
     }.bind(this));
   },
   methods: {},
