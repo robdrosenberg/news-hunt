@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     get 'medium' => 'posts#medium'
     get 'hackernews' => 'posts#hackernews'
     get 'githubtrending' => 'posts#githubtrending'
+    get 'all' => 'posts#all'
   end
 end

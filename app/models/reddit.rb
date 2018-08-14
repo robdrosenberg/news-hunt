@@ -13,7 +13,8 @@ class Reddit < ApplicationRecord
     {
       id: post['id'],
       title: post['title'],
-      url: "https://www.reddit.com" + post['permalink'],
+      url: post['url'],
+      comments_url: "https://www.reddit.com" + post['permalink'],
       points: post['score'],
       comments: post['num_comments'],
       author: post['author']
