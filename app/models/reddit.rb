@@ -17,7 +17,8 @@ class Reddit < ApplicationRecord
       comments_url: "https://www.reddit.com" + post['permalink'],
       points: post['score'],
       comments: post['num_comments'],
-      author: post['author']
+      author: post['author'],
+      source: 'Reddit'
     }
   end
 end

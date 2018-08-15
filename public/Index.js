@@ -10,7 +10,6 @@ var HomePage = {
   created: function () {
     axios.get("http://localhost:3000/api/all").then(function(response){
       this.list = response.data;
-
     }.bind(this));
   },
   methods: {},
