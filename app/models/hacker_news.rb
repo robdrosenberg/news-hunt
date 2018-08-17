@@ -22,7 +22,8 @@ class HackerNews < ApplicationRecord
       points: post['score'],
       comments: post['descendants'],
       comments_url: "https://news.ycombinator.com/item?id=#{post['id']}" ,
-      author: post['by']
+      author: post['by'],
+      source: 'Hacker News'
     }
   end
 

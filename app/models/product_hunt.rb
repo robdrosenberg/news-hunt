@@ -13,7 +13,8 @@ class ProductHunt < ApplicationRecord
       comments_url: post['discussion_url'],
       points: post['votes_count'],
       comments: post['comments_count'],
-      author: post['user']['username']
+      author: post['user']['username'],
+      source: 'Product Hunt'
     }
   end
 end

@@ -2,8 +2,15 @@ class Api::PostsController < ApplicationController
 
   def all
     @all_posts = []
-    HackerNews.get_posts.each do |post|
-      @all_posts << post
+    hackernews = HackerNews.get_posts
+    reddit = Reddit.get_posts
+    producthunt = ProductHunt.get_posts
+    i = 0
+    20.times do
+      @all_posts << hackernews[i]
+      @all_posts << reddit[i]
+      @all_posts << producthunt[i]
+      i+=1
     end
     render 'all.json.jbuilder'
   end
