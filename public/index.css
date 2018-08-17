@@ -1,0 +1,27 @@
+nav {
+  background-color: #fff !important;
+}
+
+body {
+  background-color: #f4f4f4 !important;
+}
+
+ul li a {
+  color: #666 !important;
+}
+
+ul li {
+  color: #666 !important;
+}
+
+.brand-logo {
+  color: #666 !important;
+}
+
+span {
+  margin-right: 0.35em !important;
+}
+
+.card-action {
+  color: #666 !important;
+}

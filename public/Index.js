@@ -8,7 +8,11 @@ var HomePage = {
     };
   },
   created: function () {
-    axios.get("http://localhost:3000/api/all").then(function(response){
+    // axios.get("http://localhost:3000/api/all").then(function(response){
+    //   this.list = response.data;
+    // }.bind(this));
+    // TESTING PURPOSES ONLY -- UNTIL ALL ALGORITHM IS SPED UP //
+    axios.get("http://localhost:3000/api/reddit").then(function(response){
       this.list = response.data;
     }.bind(this));
   },
