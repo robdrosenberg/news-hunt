@@ -35,6 +35,7 @@ class Api::PostsController < ApplicationController
   end
 
   def githubtrending
-
+    @github_trending_posts = GithubTrending.get_posts
+    render 'github_trending.json.jbuilder'
   end
 end
