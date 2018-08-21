@@ -4,7 +4,9 @@ var HomePage = {
   data: function () {
     return {
       message: "News-Hunt",
-      list: []
+      list: [],
+      reddit: [],
+      producthunt: []
     };
   },
   created: function () {
@@ -16,7 +18,11 @@ var HomePage = {
       this.list = response.data;
     }.bind(this));
   },
-  methods: {},
+  methods: {
+    getReddit() {
+      this.list = this.reddit;
+    }
+  },
   computed: {}
 };
 
