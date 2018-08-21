@@ -26,5 +26,10 @@ span {
   color: #666 !important;
 }
 footer {
+  padding-top: 100px;
   text-align: center;
+}
+.movedown {
+  /* padding-top: 50px; */
+  margin-top: 65px;
 }
