@@ -5,11 +5,13 @@ class Api::PostsController < ApplicationController
     hackernews = HackerNews.get_posts
     reddit = Reddit.get_posts
     producthunt = ProductHunt.get_posts
+    github_trending = GithubTrending.get_posts
     i = 0
     20.times do
       @all_posts << hackernews[i]
       @all_posts << reddit[i]
       @all_posts << producthunt[i]
+      @all_posts << github_trending[i]
       i+=1
     end
     render 'all.json.jbuilder'
