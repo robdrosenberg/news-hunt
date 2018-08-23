@@ -1,17 +1,10 @@
 require 'unirest'
 
 class HackerNews < ApplicationRecord
-  def self.get_post_ids
-    response = Unirest.get('https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty')
-    response.body[0..19]
-  end
-
   def self.get_posts
-    ids = get_post_ids
-    posts = ids.map do |id|
-      response = Unirest.get("https://hacker-news.firebaseio.com/v0/item/#{id}.json?print=pretty")
-      normalize(response.body)
-    end
+      response = Unirest.get('https://api.hnpwa.com/v0/news/1.json')
+      posts = response.body[0..19]
+      posts.map!{|post| normalize(post)}
   end
 
   def self.normalize(post)
@@ -19,12 +12,11 @@ class HackerNews < ApplicationRecord
       id: post['id'],
       title: post['title'],
       url: post['url'],
-      points: post['score'],
-      comments: post['descendants'],
+      points: post['points'],
+      comments: post['comments_count'],
       comments_url: "https://news.ycombinator.com/item?id=#{post['id']}" ,
-      author: post['by'],
+      author: post['user'],
       source: 'Hacker News'
     }
   end
-
 end

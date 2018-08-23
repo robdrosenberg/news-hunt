@@ -25,6 +25,30 @@ span {
 .card-action {
   color: #666 !important;
 }
+
 footer {
+  padding-top: 100px;
   text-align: center;
+}
+
+.movedown {
+  /* padding-top: 50px; */
+  margin-top: 65px;
+}
+
+.brand-logo {
+  /*width: 170px;*/
+  max-height: 70px;
+}
+
+.card-content {
+  padding: 12px !important;
+}
+
+/*ul li a i {
+  color: #fff !important;
+}*/
+
+ul li .right {
+  color: #fff !important;
 }
