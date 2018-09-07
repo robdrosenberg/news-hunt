@@ -1,36 +1,73 @@
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>News Hunt</title>
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.js"></script>
-  <script src="index.js" defer></script>
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-  <link type="text/css" rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8">
+    <title>News Hunt</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="index.js" defer></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="index.css">
 
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
 
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
+  <body>
 
-<body>
-  <div id="vue-app">
-    <router-view></router-view>
-    <br>
-    <footer class="container">
-      <p>Created by <a href="https://github.com/robdrosenberg">Robert Rosenberg</a> and <a href="https://github.com/stephencarico">Stephen
-          Carico</a></p>
-    </footer>
-  </div>
-  <!--JavaScript at end of body for optimized loading-->
-  
-  <script type="text/javascript" src="js/materialize.min.js"></script>
-</body>
+    <div id="vue-app">
+      <router-view></router-view>
+      <br>
+      <footer class="container">
+        <p>Created by <a href="https://github.com/robdrosenberg">Robert Rosenberg</a> and <a href="https://github.com/stephencarico">Stephen Carico</a></p>
+      </footer>
+    </div>
+
+    <div class="user-modal-container" id="login-modal" v-on:click="close">
+      <div class="user-modal">
+        <ul class="form-switcher">  
+          <li v-on:click="flip('register', $event)"><a href="" id="register-form">Register</a></li>
+          <li v-on:click="flip('login', $event)"><a href="" id="login-form">Login</a></li>
+        </ul> 
+        <div class="form-register" id="form-register">
+          <div class="error-message" v-text="registerError"></div>  
+          <input type="text" name="name" placeholder="Name" v-model="registerName" @keyup.enter="submit('register', $event)">  
+          <input type="email" name="email" placeholder="Email" v-model="registerEmail" @keyup.enter="submit('register', $event)">  
+          <input type="password" name="password" placeholder="Password" v-model="registerPassword" @keyup.enter="submit('register', $event)">  
+          <input type="submit" v-on:click="submit('register', $event)" v-model="registerSubmit" id="registerSubmit">  
+          <div class="links">  
+            <a href="" v-on:click="flip('login', $event)">Already have an account?</a>
+          </div> 
+        </div>  
+        <div class="form-login" id="form-login">
+          <div class="error-message" v-text="loginError"></div>  
+          <input type="text" name="user" placeholder="Email or Username" v-model="loginUser" @keyup.enter="submit('login', $event)">  
+          <input type="password" name="password" placeholder="Password" v-model="loginPassword" @keyup.enter="submit('login', $event)">  
+          <input type="submit" @click="submit('login', $event)" v-model="loginSubmit"  id="loginSubmit">  
+          <div class="links">  
+            <a href="" @click="flip('password', $event)">Forgot your password?</a>
+          </div> 
+        </div>  
+        <div class="form-password" id="form-password">
+          <div class="error-message" v-text="passwordError"></div>  
+          <input type="text" name="email" placeholder="Email" v-model="passwordEmail" @keyup.enter="submit('password', $event)">  
+          <input type="submit" @click="submit('password', $event)" v-model="passwordSubmit" id="passwordSubmit">  
+        </div> 
+      </div>
+    </div>
+     
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+  </body>
 
 </html>
 
@@ -39,27 +76,28 @@
     <div class="navbar-fixed">
       <nav class="nav-extended">
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo center">News Hunt</a>
+          <!-- <a href="#" class="brand-logo center">News Hunt</a> -->
+          <img class="brand-logo center" src="assets/images/icon-left-font-1.png">
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
         <div class="container">
           <div class="nav-content">
             <span>
               <ul class="tabs tabs-transparent">
-                <li class="tab active"><a href="#">All</a></li>
-                <li class="tab"><a href="#" v-on:click="getHackerNews()">Hacker News</a></li>
-                <li class="tab"><a class="active" href="#" v-on:click="getReddit()">Reddit</a></li>
-                <li class="tab"><a href="#" v-on:click="getProducthunt()">Product Hunt</a></li>
-                <li class="tab"><a href="#" v-on:click="getGithubTrending()">Github Trending</a></li>
+                <li class="tab"><a href="/#/">All</a></li>
+                <li class="tab"><a v-on:click="getHackerNews()">Hacker News</a></li>
+                <li class="tab"><a class="active" v-on:click="getReddit()">Reddit</a></li>
+                <li class="tab"><a v-on:click="getProducthunt()">Product Hunt</a></li>
+                <li class="tab"><a v-on:click="getGithubTrending()">Github Trending</a></li>
+                <li class="right"><a class="waves-effect waves-light btn right modal-trigger" v-on:click="open('login', $event)">Login</a></li>
+                <li class="right"><a class="waves-effect waves-light btn modal-trigger right" v-on:click="open('register', $event)">Register</a></li>
               </ul>
             </span>
-            <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal hide-on-med-and-down">
-              <i class="material-icons">account_circle</i>
-            </a>
           </div>
         </div>
       </nav>
     </div>
+
     <div class="container movedown">
       <div class="col s12 m7" v-for="item in list">
         <div class="card horizontal">
@@ -67,7 +105,7 @@
             <img src="https://lorempixel.com/100/190/nature/6">
           </div> -->
           <div class="card-stacked">
-            <a :href="item.url">
+            <a :href="item.url" target="_blank">
               <div class="card-content">
                 <h6>{{ item.title }}</h6>
               </div>
