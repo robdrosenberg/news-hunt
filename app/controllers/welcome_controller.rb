@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    redirect_to root_path
+    redirect_to '/public/index.html'
   end
 end
