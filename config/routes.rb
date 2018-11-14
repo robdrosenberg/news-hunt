@@ -12,5 +12,5 @@ Rails.application.routes.draw do
     post 'bookmarks' => 'bookmarks#create'
     delete 'bookmarks' => 'bookmarks#destroy'
   end
-  root to: => "posts#all"
+  root to: "posts#all"
 end
