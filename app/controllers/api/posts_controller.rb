@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class Api::PostsController < ApplicationController
 
   def all
     @all_posts = []
