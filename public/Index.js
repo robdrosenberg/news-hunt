@@ -7,28 +7,28 @@ var HomePage = {
     };
   },
   created: function () {
-    axios.get("http://localhost:3000/api/all").then(function(response){
+    axios.get("/api/all").then(function(response){
       this.list = response.data;
     }.bind(this));
   },
   methods: {
     getHackerNews: function(){
-      axios.get("http://localhost:3000/api/hackernews").then(function(response){
+      axios.get("/api/hackernews").then(function(response){
         this.list = response.data;
       }.bind(this));
     },
     getReddit: function () {
-      axios.get("http://localhost:3000/api/reddit").then(function (response) {
+      axios.get("/api/reddit").then(function (response) {
         this.list = response.data;
       }.bind(this));
     },
     getProducthunt: function () {
-      axios.get("http://localhost:3000/api/producthunt").then(function (response) {
+      axios.get("/api/producthunt").then(function (response) {
         this.list = response.data;
       }.bind(this));
     },
     getGithubTrending: function () {
-      axios.get("http://localhost:3000/api/githubtrending").then(function (response) {
+      axios.get("/api/githubtrending").then(function (response) {
         this.list = response.data;
       }.bind(this));
     },
