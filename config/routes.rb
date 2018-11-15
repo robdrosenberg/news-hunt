@@ -12,5 +12,5 @@ Rails.application.routes.draw do
     post 'bookmarks' => 'bookmarks#create'
     delete 'bookmarks' => 'bookmarks#destroy'
   end
-  root to: Rails.root.join('public','index.html')
+  root 'welcome#index'
 end
