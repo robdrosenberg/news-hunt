@@ -1,5 +1,5 @@
-class WelcomeController < ApplicationController
+class WelcomeController < ActionController::Base
   def index
-    render file: Rails.root.join('..', 'public', 'index.html')
+    render file: Rails.root.join('public', 'index.html')
   end
 end
