@@ -13,5 +13,5 @@ Rails.application.routes.draw do
     delete 'bookmarks' => 'bookmarks#destroy'
   end
   # root 'welcome#index'
-  get '', to: redirect('/index.html')
+  get '', to: redirect('/Index.html')
 end
