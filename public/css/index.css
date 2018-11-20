@@ -32,8 +32,7 @@ footer {
 }
 
 .movedown {
-  /* padding-top: 50px; */
-  margin-top: 65px;
+  padding-top: 75px;
 }
 
 .brand-logo {
@@ -47,4 +46,8 @@ footer {
 
 ul li .right {
   color: #fff !important;
+}
+
+nav.nav-extended .nav-wrapper {
+  max-height: 65px
 }
