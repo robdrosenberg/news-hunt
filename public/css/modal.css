@@ -1,54 +1,3 @@
-nav {
-  background-color: #fff !important;
-}
-
-body {
-  background-color: #f4f4f4 !important;
-}
-
-ul li a {
-  color: #666 !important;
-}
-
-ul li {
-  color: #666 !important;
-}
-
-.brand-logo {
-  color: #666 !important;
-}
-
-span {
-  margin-right: 0.35em !important;
-}
-
-.card-action {
-  color: #666 !important;
-}
-
-footer {
-  padding-top: 100px;
-  text-align: center;
-}
-
-.movedown {
-  /* padding-top: 50px; */
-  margin-top: 65px;
-}
-
-.brand-logo {
-  /*width: 170px;*/
-  max-height: 70px;
-}
-
-.card-content {
-  padding: 12px !important;
-}
-
-ul li .right {
-  color: #fff !important;
-}
-
 .user-modal-container * {
     box-sizing: border-box;
     top: 25%;
@@ -151,4 +100,8 @@ ul li .right {
 
 .user-modal-container input[type="submit"].disabled {
   background-color: #98d6b7;
+}
+
+[v-cloak] {
+  display: none;
 }
