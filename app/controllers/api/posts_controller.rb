@@ -7,7 +7,7 @@ class Api::PostsController < ApplicationController
     producthunt = ProductHunt.get_posts
     github_trending = GithubTrending.get_posts
     i = 0
-    20.times do
+    10.times do
       @all_posts << hackernews[i]
       @all_posts << reddit[i]
       @all_posts << producthunt[i]
